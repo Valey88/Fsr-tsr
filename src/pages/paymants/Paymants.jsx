@@ -147,12 +147,10 @@ export default function Payments() {
                 alignItems: "center",
                 gridGap: 15,
                 mb: 4,
+                width: "100px",
               }}
             >
-              <img src="/previwLogo.svg" alt="" />
-              <Typography variant="h6" sx={{ color: "#8b5cf6" }}>
-                Лого
-              </Typography>
+              <img style={{ width: "100%" }} src="/Logo.png" alt="" />
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column", gridGap: 30 }}>
               <Typography variant="h4">Укажите контактные данные</Typography>

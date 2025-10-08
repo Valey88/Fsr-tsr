@@ -38,9 +38,9 @@ export default function Footer() {
         <Grid container spacing={3}>
           {/* Меню */}
           <Grid item xs={12} md={3}>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5, width:"150px" }}>
               <Link href="/">
-               Лого
+                <img style={{ width: "100%" }} src="/Logo.png" alt="" />
               </Link>
               {menuItems.map((item, index) => (
                 <Link
@@ -122,8 +122,14 @@ export default function Footer() {
       </Container>
 
       {/* Нижний футер */}
-       
-      <Box sx={{ background: "linear-gradient(to bottom left, #D3D3FF, #B3B3FA)", mt: 4, py: 2 }}>
+
+      <Box
+        sx={{
+          background: "linear-gradient(to bottom left, #D3D3FF, #B3B3FA)",
+          mt: 4,
+          py: 2,
+        }}
+      >
         <Container
           sx={{
             display: "flex",

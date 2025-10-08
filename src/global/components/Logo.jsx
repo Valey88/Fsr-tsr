@@ -23,11 +23,11 @@ const Logo = () => {
         navigate("/");
       }}
       sx={{
-        width: { xs: "150px", sm: "150px", md: "150px", lg: "225px" },
+        width: { xs: "150px", sm: "150px", md: "150px", lg: "150px" },
         cursor: "pointer",
       }}
     >
-      Лого
+      <img style={{ width: "100%" }} src="/Logo.png" alt="" />
     </Box>
   );
 };
