@@ -58,10 +58,64 @@ export default function ElectronicCertificate() {
     { title: "list-6-title", content: ["list-6-content"] },
   ];
 
+  const pageTitle =
+    content["page-title"] ||
+    "Электронные сертификаты — государственная поддержка от СФР-ТСР";
+  const pageDescription =
+    stripHtml(content["meta-description"]) ||
+    "Информация о получении электронных сертификатов СФР-ТСР для приобретения технических средств реабилитации. Подробные условия, порядок использования и ответы на частые вопросы.";
+  const pageKeywords =
+    "СФР-ТСР, электронный сертификат, ТСР, сертификат на технические средства реабилитации, sfrtcr.ru, государственная программа, получение сертификата, инвалиды, поддержка государства, СФР";
+
+  const schemaOrgJSONLD = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: pageTitle,
+    url: "https://sfrtcr.ru/certificate",
+    description: pageDescription,
+    publisher: {
+      "@type": "Organization",
+      name: "ООО «СФР-ТСР»",
+      url: "https://sfrtcr.ru",
+      logo: "https://sfrtcr.ru/logo.png",
+      sameAs: ["https://vk.com/sfrtcr", "https://ok.ru/sfrtcr"],
+    },
+  };
+
   return (
     <Box sx={{ backgroundColor: "#fafafa", minHeight: "100vh" }}>
       <Helmet>
-        <title>{content["page-title"] || "Электронные сертификаты"}</title>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={pageKeywords} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://sfrtcr.ru/certificate" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sfrtcr.ru/certificate" />
+        <meta
+          property="og:image"
+          content="https://sfrtcr.ru/og-image-certificate.jpg"
+        />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:site_name" content="СФР-ТСР" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta
+          name="twitter:image"
+          content="https://sfrtcr.ru/og-image-certificate.jpg"
+        />
+
+        {/* JSON-LD Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(schemaOrgJSONLD)}
+        </script>
       </Helmet>
 
       {/* Hero Section */}
@@ -90,7 +144,9 @@ export default function ElectronicCertificate() {
                 mb: 2,
               }}
               dangerouslySetInnerHTML={{
-                __html: content["main-heading"] || "Электронные сертификаты",
+                __html:
+                  content["main-heading"] ||
+                  "Электронные сертификаты для получения ТСР",
               }}
             />
             <Typography
@@ -101,8 +157,7 @@ export default function ElectronicCertificate() {
                 fontSize: { xs: "1rem", md: "1.25rem" },
               }}
             >
-              {stripHtml(content["meta-description"]) ||
-                "Получите государственную поддержку на приобретение технических средств реабилитации."}
+              {pageDescription}
             </Typography>
           </motion.div>
         </Container>
@@ -116,45 +171,29 @@ export default function ElectronicCertificate() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Card
-            sx={{
-              p: { xs: 2, md: 3 },
-              borderRadius: 4,
-              boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-              mb: 3,
-              "&:hover": { boxShadow: "0 6px 25px rgba(0,0,0,0.1)" },
-            }}
-          >
-            <CardContent>
-              <Typography
-                sx={{
-                  color: "text.secondary",
-                  fontSize: { xs: "1rem", md: "1.125rem" },
-                  lineHeight: 1.8,
-                }}
-                dangerouslySetInnerHTML={{ __html: content["intro-1"] }}
-              />
-            </CardContent>
-          </Card>
-          <Card
-            sx={{
-              p: { xs: 2, md: 3 },
-              borderRadius: 4,
-              boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-              "&:hover": { boxShadow: "0 6px 25px rgba(0,0,0,0.1)" },
-            }}
-          >
-            <CardContent>
-              <Typography
-                sx={{
-                  color: "text.secondary",
-                  fontSize: { xs: "1rem", md: "1.125rem" },
-                  lineHeight: 1.8,
-                }}
-                dangerouslySetInnerHTML={{ __html: content["intro-2"] }}
-              />
-            </CardContent>
-          </Card>
+          {[1, 2].map((n) => (
+            <Card
+              key={n}
+              sx={{
+                p: { xs: 2, md: 3 },
+                borderRadius: 4,
+                boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+                mb: 3,
+                "&:hover": { boxShadow: "0 6px 25px rgba(0,0,0,0.1)" },
+              }}
+            >
+              <CardContent>
+                <Typography
+                  sx={{
+                    color: "text.secondary",
+                    fontSize: { xs: "1rem", md: "1.125rem" },
+                    lineHeight: 1.8,
+                  }}
+                  dangerouslySetInnerHTML={{ __html: content[`intro-${n}`] }}
+                />
+              </CardContent>
+            </Card>
+          ))}
         </motion.div>
 
         {/* Accordion Section */}

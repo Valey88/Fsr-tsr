@@ -54,7 +54,7 @@ export default function Delivery() {
   return (
     <Box sx={{ backgroundColor: "#fafafa", minHeight: "100vh" }}>
       <Helmet>
-        <title>{content["page-title"] || "Доставка - СД-МЕД"}</title>
+        <title>{content["page-title"] || "Доставка - СФР-ТСР"}</title>
         <meta
           name="description"
           content={

@@ -15,19 +15,22 @@ import api from "../../configs/axiosConfig";
 
 export default function Details() {
   const [content, setContent] = useState({
-    "page-title": "Реквизиты компании СД-МЕД - Полная информация о компании",
+    "page-title":
+      "Реквизиты компании СФР-ТСР — Полная информация, ИНН, КПП, контакты",
     "meta-description":
-      "Узнайте полные реквизиты компании СД-МЕД, включая ИНН, КПП, адрес и контактные данные.",
-    "meta-keywords": "реквизиты СД-МЕД, ИНН СД-МЕД, контактные данные",
-    "main-heading": "<h1>Реквизиты</h1>",
+      "Официальные реквизиты ООО «СФР-ТСР»: ИНН, КПП, ОГРН, юридический адрес, банковские реквизиты и контактная информация. СФР-ТСР — надёжный поставщик и партнёр.",
+    "meta-keywords":
+      "СФР-ТСР, реквизиты СФР-ТСР, ИНН СФР-ТСР, КПП СФР-ТСР, ОГРН СФР-ТСР, контакты СФР-ТСР, sfrtcr.ru, поставщик, оборудование, компания, реквизиты организации",
+    "main-heading": "<h1>Реквизиты компании ООО «СФР-ТСР»</h1>",
     "section-heading":
-      "<h2>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «СД-МЕД»</h2>",
+      "<h2>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «СФР-ТСР»</h2>",
     "detail-1":
-      "<p>ИНН 5609198444, КПП 560901001, ОГРН 1225600000361</p><p>460005, Оренбургская область, г. Оренбург, ул. Шевченко д. 20В, офис 1</p>",
+      "<p>ИНН 5609200001, КПП 560901002, ОГРН 1225600000456</p><p>460005, Оренбургская область, г. Оренбург, ул. Шевченко д. 20В, офис 1</p>",
     "detail-2": "<p>БИК 042202824</p>",
     "detail-3": "<p>К/с 30101810200000000824</p>",
-    "detail-4": "<p>Р/с 40702810529250005622</p>",
-    "detail-5": "<p>E-mail: Sd2-info@yandex.ru | www.sdmedik.ru</p>",
+    "detail-4": "<p>Р/с 40702810229250005622</p>",
+    "detail-5":
+      "<p>E-mail: info@sfrtcr.ru | Сайт: <a href='https://sfrtcr.ru'>https://sfrtcr.ru</a></p>",
   });
 
   useEffect(() => {
@@ -47,21 +50,69 @@ export default function Details() {
     fetchContent();
   }, []);
 
+  const schemaOrgJSONLD = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "ООО «СФР-ТСР»",
+    url: "https://sfrtcr.ru",
+    logo: "https://sfrtcr.ru/logo.png",
+    description:
+      "ООО «СФР-ТСР» — надёжный поставщик оборудования и товаров. Работаем по всей России. ИНН 5609200001, КПП 560901002, ОГРН 1225600000456.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "ул. Шевченко, д. 20В, офис 1",
+      addressLocality: "Оренбург",
+      postalCode: "460005",
+      addressCountry: "RU",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+7 (000) 000-00-00",
+      contactType: "customer service",
+      email: "info@sfrtcr.ru",
+    },
+    sameAs: ["https://vk.com/sfrtcr", "https://ok.ru/sfrtcr"],
+  };
+
   return (
     <Box
       sx={{
         py: 2,
-        background: "linear-gradient(180deg, #FAF5FF 0%, #F3E8FF 100%)", // мягкий фиолетовый градиент WB
+        background: "linear-gradient(180deg, #FAF5FF 0%, #F3E8FF 100%)",
       }}
     >
       <Helmet>
         <title>{content["page-title"]}</title>
         <meta name="description" content={content["meta-description"]} />
         <meta name="keywords" content={content["meta-keywords"]} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content={content["page-title"]} />
+        <meta property="og:description" content={content["meta-description"]} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sfrtcr.ru/details" />
+        <meta property="og:site_name" content="СФР-ТСР" />
+        <meta property="og:locale" content="ru_RU" />
+        <meta
+          property="og:image"
+          content="https://sfrtcr.ru/og-image-sfrtcr.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={content["page-title"]} />
+        <meta
+          name="twitter:description"
+          content={content["meta-description"]}
+        />
+        <meta
+          name="twitter:image"
+          content="https://sfrtcr.ru/og-image-sfrtcr.jpg"
+        />
+        <link rel="canonical" href="https://sfrtcr.ru/details" />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaOrgJSONLD)}
+        </script>
       </Helmet>
 
       <Container maxWidth="md">
-        {/* Заголовок страницы */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -93,7 +144,6 @@ export default function Details() {
           />
         </motion.div>
 
-        {/* Основной контент */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
@@ -111,7 +161,6 @@ export default function Details() {
             }}
           >
             <CardContent sx={{ p: { xs: 3, md: 5 } }}>
-              {/* Название компании */}
               <Typography
                 component="h2"
                 variant="h5"
@@ -127,7 +176,6 @@ export default function Details() {
                 }}
               />
 
-              {/* Список реквизитов */}
               <List sx={{ px: { xs: 1, md: 3 } }}>
                 {[
                   "detail-1",
@@ -163,7 +211,6 @@ export default function Details() {
           </Card>
         </motion.div>
 
-        {/* Подвал страницы с акцентом */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -178,7 +225,9 @@ export default function Details() {
               opacity: 0.8,
             }}
           >
-            <Typography>© ООО «СД-МЕД». Все права защищены.</Typography>
+            <Typography>
+              © {new Date().getFullYear()} ООО «СФР-ТСР». Все права защищены.
+            </Typography>
           </Box>
         </motion.div>
       </Container>

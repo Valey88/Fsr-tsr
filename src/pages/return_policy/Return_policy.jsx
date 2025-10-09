@@ -21,7 +21,7 @@ const stripHtml = (html) => html.replace(/<[^>]+>/g, "");
 
 export default function ReturnPolicy() {
   const [content, setContent] = useState({
-    "page-title": "Политика возврата - СД-МЕД",
+    "page-title": "Политика возврата - ФСР-ТСР",
     "meta-description":
       "Узнайте о нашей политике возврата товаров и условиях возврата.",
     "meta-keywords": "возврат, политика возврата, товары, магазин",

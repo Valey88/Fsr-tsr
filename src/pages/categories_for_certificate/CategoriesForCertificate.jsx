@@ -19,18 +19,60 @@ export default function CategoriesPage() {
     fetchCategory();
   }, [fetchCategory]);
 
+  const categoriesList = Array.isArray(category.data) ? category.data : [];
+
+  const schemaCategories = categoriesList.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    url: `https://sfrtcr.ru/products/certificate/${item.id}`,
+  }));
+
   return (
     <Box sx={{ mt: 6, mb: 10 }}>
       <Helmet>
-        <title>Категории товаров | Sdmedik.ru</title>
+        <title>Категории товаров | СФР-ТСР</title>
         <meta
           name="description"
-          content="Ознакомьтесь с нашими категориями товаров. Мы предлагаем широкий ассортимент продукции для ваших нужд."
+          content="Ознакомьтесь с категориями товаров компании СФР-ТСР. Широкий ассортимент продукции для ваших нужд и сертифицированные товары."
         />
         <meta
           name="keywords"
-          content="категории, товары, ассортимент, продукция"
+          content="категории товаров, СФР-ТСР, сертификаты, ТСР, медицинские товары, продукция"
         />
+        <link rel="canonical" href="https://sfrtcr.ru/categories" />
+
+        {/* Open Graph / Social */}
+        <meta property="og:title" content="Категории товаров | СФР-ТСР" />
+        <meta
+          property="og:description"
+          content="Ознакомьтесь с категориями товаров компании СФР-ТСР. Широкий ассортимент продукции для ваших нужд и сертифицированные товары."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sfrtcr.ru/categories" />
+        <meta
+          property="og:image"
+          content="https://sfrtcr.ru/og-image-categories.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Категории товаров | СФР-ТСР" />
+        <meta
+          name="twitter:description"
+          content="Ознакомьтесь с категориями товаров компании СФР-ТСР. Широкий ассортимент продукции для ваших нужд и сертифицированные товары."
+        />
+        <meta
+          name="twitter:image"
+          content="https://sfrtcr.ru/og-image-categories.jpg"
+        />
+
+        {/* Schema.org для категорий */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            itemListElement: schemaCategories,
+          })}
+        </script>
       </Helmet>
 
       <Container maxWidth="lg">
@@ -43,17 +85,17 @@ export default function CategoriesPage() {
             color: "#1f1f1f",
           }}
         >
-          Категории товаров
+          Категории товаров СФР-ТСР
         </Typography>
 
-        {Array.isArray(category.data) && category.data.length > 0 ? (
+        {categoriesList.length > 0 ? (
           <Grid
             container
             spacing={{ xs: 2, sm: 3, md: 4 }}
             columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}
             justifyContent="center"
           >
-            {category.data.map((item) => (
+            {categoriesList.map((item) => (
               <Grid item xs={1} sm={1} md={1} lg={1} key={item.id}>
                 <Link
                   to={`/products/certificate/${item.id}`}
@@ -74,7 +116,6 @@ export default function CategoriesPage() {
                       },
                     }}
                   >
-                    {/* Изображение категории */}
                     <Box
                       sx={{
                         flex: "1 1 auto",
@@ -91,20 +132,17 @@ export default function CategoriesPage() {
                       <Box
                         component="img"
                         src={`${urlPictures}/${item.images?.[0]?.name}`}
-                        alt={item.name}
+                        alt={`Категория товаров ${item.name} компании СФР-ТСР`}
                         sx={{
                           width: "320px",
                           height: "300px",
                           objectFit: "contain",
                           transition: "transform 0.4s ease",
-                          "&:hover": {
-                            transform: "scale(1.05)",
-                          },
+                          "&:hover": { transform: "scale(1.05)" },
                         }}
                       />
                     </Box>
 
-                    {/* Нижний блок с названием */}
                     <CardContent
                       sx={{
                         p: 2,

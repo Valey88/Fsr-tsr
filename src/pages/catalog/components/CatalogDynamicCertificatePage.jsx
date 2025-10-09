@@ -7,166 +7,140 @@ import {
   CardMedia,
   Pagination,
   Typography,
-  IconButton,
-  Chip,
   Grid,
 } from "@mui/material";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import useProductStore from "../../../store/productStore";
 import useBascketStore from "../../../store/bascketStore";
 import { urlPictures } from "../../../constants/constants";
 import SidebarFilter from "./SidebarFilter";
-import FilterListIcon from "@mui/icons-material/FilterList";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
-const ProductCard = memo(({ e, hendleAddProductThithBascket }) => {
-  const isCatalog1 = e?.catalogs === 1;
-  const navigate = useNavigate();
-
+const ProductCard = memo(({ e }) => {
   return (
-    <Link to={`/product/certificate/${e.id}`}>
-      <Box
+    <Link
+      to={`/product/certificate/${e.id}`}
+      style={{ textDecoration: "none", background: "none" }}
+    >
+      <Card
         sx={{
-          width: { xs: "167px", md: "281px" },
-          height: { xs: "600px", md: "580px" },
+          width: { xs: "170px", md: "261px" },
+          height: { xs: "600px", md: "600px" },
           borderRadius: "8px",
-          transition: "transform 0.2s, box-shadow 0.2s",
           display: "flex",
           flexDirection: "column",
           cursor: "pointer",
-          position: "relative",
+          position: "relative", // Добавлено для корректного позиционирования preview
+          transition: "transform 0.2s, box-shadow 0.2s",
+          "&:hover": {
+            transform: "scale(1.03)",
+            boxShadow: "0 4px 25px rgba(0,0,0,0.15)",
+          },
+          boxShadow: "none",
         }}
       >
-        {e.preview && e.preview.trim() !== "" && (
+        {e.preview && (
           <Box
             sx={{
               position: "absolute",
-              top: 0,
-              left: 0,
-              backgroundColor: "#7E22CE",
-              color: "#FFFFFF",
-              padding: "4px 12px",
+              top: 8,
+              left: 8,
+              right: 8, // Добавлено для ограничения ширины
+              bgcolor: "#7E22CE",
+              color: "#fff",
+              px: 1.5,
+              py: 0.5,
               borderRadius: "8px",
-              zIndex: 1,
-              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
-              maxWidth: "80%",
+              maxWidth: "max-content", // Ограничение ширины с учетом отступов
               overflow: "hidden",
               textOverflow: "ellipsis",
               whiteSpace: "nowrap",
+              zIndex: 10, // Увеличено значение z-index
+              boxShadow: "0 2px 8px rgba(0,0,0,0.3)", // Добавлена тень для лучшей видимости
             }}
           >
             <Typography
               variant="caption"
               sx={{
                 fontWeight: "bold",
-                fontSize: { xs: "0.7rem", md: "0.9rem" },
+                fontSize: { xs: "0.7rem", md: "0.75rem" }, // Адаптивный размер шрифта
+                lineHeight: 1.2,
               }}
             >
               {e.preview}
             </Typography>
           </Box>
         )}
-        <Box
+        <CardMedia
+          component="img"
+          image={`${urlPictures}/${e.images[0]?.name}`}
+          alt={`Сертификат ТСР: ${e.name}`}
+          loading="lazy"
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "300px",
-            borderBottom: "1px solid #E0E0E0",
+            width: "100%",
+            height: { xs: "200px", md: "300px" },
+            objectFit: "contain",
+            mt: e.preview ? 3 : 0, // Добавлен отступ сверху если есть preview
           }}
-          onClick={() => {
-            navigate(`/product/certificate/${e.id}`);
-          }}
-        >
-          <CardMedia
-            component="img"
-            image={`${urlPictures}/${e.images[0].name}`}
-            alt={e.name}
-            sx={{
-              width: "100%",
-              height: { xs: "200px", md: "300px" },
-              objectFit: "contain",
-            }}
-            loading="lazy"
-          />
-        </Box>
+        />
         <CardContent
           sx={{
+            flexGrow: 1,
             display: "flex",
             flexDirection: "column",
-            flexGrow: 1,
+            pt: 2, // Добавлен отступ сверху в CardContent
           }}
         >
           <Typography
+            variant="subtitle2"
             sx={{
-              fontSize: { xs: "0.65rem", md: "0.8rem" },
               fontWeight: "bold",
               mb: 1,
-            }}
-            onClick={() => {
-              navigate(`/product/certificate/${e.id}`);
+              cursor: "pointer",
+              mt: e.preview ? 1 : 0, // Дополнительный отступ если есть preview
             }}
           >
             {e.name}
           </Typography>
-          {e.nameplate && e.nameplate.trim() !== "" && (
+          {e.nameplate && (
             <Box
               sx={{
-                backgroundColor: "#2e9efaff",
-                color: "#FFFFFF",
-                padding: "4px 12px",
+                bgcolor: "#2e9efaff",
+                color: "#fff",
+                px: 1.5,
+                py: 0.5,
                 borderRadius: "8px",
-                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
-                maxWidth: "100%",
+                mb: 1,
+                zIndex: 1, // Добавлен z-index для nameplate
               }}
             >
-              <Typography
-                variant="caption"
-                sx={{
-                  fontWeight: "bold",
-                  fontSize: { xs: "0.7rem", md: "0.9rem" },
-                }}
-              >
+              <Typography variant="caption" sx={{ fontWeight: "bold" }}>
                 {e.nameplate}
               </Typography>
             </Box>
           )}
-          <Box sx={{ mt: "auto" }}>
-            {isCatalog1 && (
-              <Box sx={{ mb: 1, display: "flex", justifyContent: "left" }}>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: "#B3B3FA",
-                    fontWeight: "bold",
-                    fontSize: { xs: "1rem", md: "1.3rem" },
-                  }}
-                >
-                  {e.price} ₽
-                </Typography>
-              </Box>
-            )}
-            <Button
-              variant="contained"
-              sx={{
-                width: "100%",
-                backgroundColor: "#cb48ecff",
-                color: "#FFFFFF",
-                borderRadius: "8px",
-                "&:hover": {
-                  backgroundColor: "#b001dbff",
-                },
-              }}
-              onClick={() => {
-                navigate(`/product/certificate/${e.id}`);
-              }}
+          {e.catalogs === 1 && (
+            <Typography
+              variant="h6"
+              sx={{ color: "#B3B3FA", fontWeight: "bold", mb: 1 }}
             >
-              Подробнее
-            </Button>
-          </Box>
+              {e.price} ₽
+            </Typography>
+          )}
+          <Button
+            variant="contained"
+            sx={{
+              bgcolor: "#cb48ecff",
+              color: "#fff",
+              borderRadius: "8px",
+              "&:hover": { bgcolor: "#b001dbff" },
+              mt: "auto",
+            }}
+          >
+            Подробнее
+          </Button>
         </CardContent>
-      </Box>
+      </Card>
     </Link>
   );
 });
@@ -182,21 +156,19 @@ export default function CatalogDynamicCertificatePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [sortOrder, setSortOrder] = useState("default");
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [catalogs, setCatalogs] = useState("1,2"); // State for catalogs
 
   const category_id = id;
 
   useEffect(() => {
     const offset = (currentPage - 1) * ProductsPerPage;
     setLoading(true);
-    fetchProducts(category_id, filters, offset, ProductsPerPage, catalogs)
+    fetchProducts(category_id, filters, offset, ProductsPerPage, "1,2")
       .then(() => setLoading(false))
       .catch((err) => {
-        setLoading(false);
         setError(err.message);
+        setLoading(false);
       });
-  }, [category_id, fetchProducts, filters, currentPage, catalogs]);
+  }, [category_id, fetchProducts, filters, currentPage]);
 
   useEffect(() => {
     if (products?.data) {
@@ -204,88 +176,114 @@ export default function CatalogDynamicCertificatePage() {
         ? products.data
         : [products.data];
       let sortedProducts = [...normalizedProducts];
-      if (sortOrder === "priceAsc") {
+      if (sortOrder === "priceAsc")
         sortedProducts.sort((a, b) => a.price - b.price);
-      } else if (sortOrder === "priceDesc") {
+      else if (sortOrder === "priceDesc")
         sortedProducts.sort((a, b) => b.price - a.price);
-      }
       setCurrentProducts(sortedProducts);
     } else {
       setCurrentProducts([]);
     }
   }, [products, sortOrder]);
 
-  const handleChangePage = (event, value) => {
-    setCurrentPage(value);
-  };
+  const handleChangePage = (event, value) => setCurrentPage(value);
 
-  const handleSortChange = (order) => {
-    setSortOrder(order);
-    setCurrentPage(1); // Reset to first page on sort change
-    setCatalogs("1,2"); // Reset catalogs when sorting changes
-  };
-
-  const handleFSSCertificateClick = () => {
-    setCatalogs("2"); // Set catalogs to 2 for FSS certificate
-    setCurrentPage(1); // Reset to first page
-    setSortOrder("default"); // Reset sort order
-  };
-
-  const toggleFilter = () => {
-    setIsFilterOpen((prev) => !prev);
-  };
-
-  const hendleAddProductThithBascket = useCallback(
-    async (id) => {
-      const product_id = id;
-      await addProductThisBascket(product_id, 1);
+  // SEO: Schema.org JSON-LD
+  const schemaProducts = currentProducts.map((e, index) => ({
+    "@type": "Product",
+    position: index + 1,
+    name: e.name,
+    image: `${urlPictures}/${e.images[0]?.name}`,
+    url: `https://sfrtcr.ru/product/certificate/${e.id}`,
+    offers: {
+      "@type": "Offer",
+      price: e.price || 0,
+      priceCurrency: "RUB",
     },
-    [addProductThisBascket]
-  );
+  }));
 
   return (
-    <Box sx={{ mt: 1, mb: 5 }}>
-      <Box
-        sx={{
-          mb: 3,
-          mt: 3,
-          display: "flex",
-          justifyContent: "flex-start",
-          gap: 1,
-          flexWrap: { xs: "wrap", sm: "nowrap" },
-        }}
-      >
-        <SidebarFilter setFilters={setFilters} />
-      </Box>
+    <Box sx={{ mt: 2, mb: 5 }}>
+      <Helmet>
+        <title>
+          Сертификаты ТСР | СФР-ТСР - Купить технические средства реабилитации
+        </title>
+        <meta
+          name="description"
+          content="Купить сертификаты на технические средства реабилитации (ТСР) в компании СФР-ТСР. Полный каталог товаров с ценами и описаниями."
+        />
+        <link rel="canonical" href={`https://sfrtcr.ru/catalog/${id}`} />
+        {currentPage > 1 && (
+          <link
+            rel="prev"
+            href={`https://sfrtcr.ru/catalog/${id}?page=${currentPage - 1}`}
+          />
+        )}
+        {currentPage < Math.ceil((products.count || 0) / ProductsPerPage) && (
+          <link
+            rel="next"
+            href={`https://sfrtcr.ru/catalog/${id}?page=${currentPage + 1}`}
+          />
+        )}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            itemListElement: schemaProducts.map((p, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: p,
+            })),
+          })}
+        </script>
+      </Helmet>
+
+      <SidebarFilter setFilters={setFilters} />
+
       <Grid
         container
-        spacing={{ xs: 1, md: 1 }}
-        columns={{ xs: 4, sm: 4, md: 4 }}
-        sx={{ pt: 2, pb: 2 }}
+        spacing={2}
+        sx={{
+          mt: 2,
+          mx: "auto",
+          width: "fit-content",
+          maxWidth: "100%",
+          justifyContent: "center",
+        }}
       >
         {loading ? (
-          <Typography>Загрузка...</Typography>
+          <Box
+            sx={{ display: "flex", justifyContent: "center", width: "100%" }}
+          >
+            <Typography>Загрузка...</Typography>
+          </Box>
         ) : error ? (
-          <Typography color="error">Ошибка: {error}</Typography>
+          <Box
+            sx={{ display: "flex", justifyContent: "center", width: "100%" }}
+          >
+            <Typography color="error">Ошибка: {error}</Typography>
+          </Box>
         ) : currentProducts.length > 0 ? (
           currentProducts.map((e) => (
             <Grid item key={e.id} xs={6} sm={4} md={3}>
-              <ProductCard
-                e={e}
-                hendleAddProductThithBascket={hendleAddProductThithBascket}
-              />
+              <ProductCard e={e} />
             </Grid>
           ))
         ) : (
-          <Typography>Нет данных для отображения</Typography>
+          <Box
+            sx={{ display: "flex", justifyContent: "center", width: "100%" }}
+          >
+            <Typography>Нет данных для отображения</Typography>
+          </Box>
         )}
       </Grid>
+
       {currentProducts.length > 0 && (
         <Pagination
           count={Math.ceil((products.count || 0) / ProductsPerPage)}
           page={currentPage}
           onChange={handleChangePage}
-          sx={{ mt: 4, mb: 4, display: "flex", justifyContent: "center" }}
+          sx={{ mt: 4, display: "flex", justifyContent: "center" }}
         />
       )}
     </Box>

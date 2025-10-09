@@ -38,7 +38,14 @@ export default function Footer() {
         <Grid container spacing={3}>
           {/* Меню */}
           <Grid item xs={12} md={3}>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5, width:"150px" }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 1.5,
+                width: "150px",
+              }}
+            >
               <Link href="/">
                 <img style={{ width: "100%" }} src="/Logo.png" alt="" />
               </Link>
@@ -140,7 +147,7 @@ export default function Footer() {
           }}
         >
           <Typography sx={{ color: "#FFF", fontSize: 12 }}>
-            ©️ 2024 ООО “Sdmedik”. Все права защищены.
+            © ООО «СФР-ТСР». Все права защищены.
           </Typography>
           <Link
             href="/privacy"

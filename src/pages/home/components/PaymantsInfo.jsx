@@ -3,26 +3,40 @@ import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 function PaymantsInfo() {
   const navigate = useNavigate();
   const theme = useTheme();
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", pb: 8 }}>
+      {/* 🔹 SEO-оптимизация */}
       <Helmet>
-        <title>Оплата электронным сертификатом</title>
+        <title>Оплата электронным сертификатом | СФР-ТСР</title>
         <meta
           name="description"
-          content="Теперь оплачивать покупки на нашем сайте вы можете и электронным сертификатом."
+          content="Узнайте, как оплатить покупки электронным сертификатом СФР-ТСР. Быстро, удобно и безопасно — используйте подарочные сертификаты онлайн."
         />
         <meta
           name="keywords"
-          content="оплата, электронный сертификат, покупки"
+          content="оплата электронным сертификатом, сертификат на оплату покупок, электронный подарочный сертификат, оплатить покупки онлайн, СФР-ТСР"
         />
+        <meta
+          property="og:title"
+          content="Оплата электронным сертификатом | СФР-ТСР"
+        />
+        <meta
+          property="og:description"
+          content="Теперь вы можете оплачивать покупки с помощью электронного сертификата СФР-ТСР. Удобно и безопасно онлайн."
+        />
+        <meta property="og:image" content="/img/og-image-sfr-tsr.jpg" />
+        <meta property="og:url" content="https://sfr-tsr.ru/payments-info" />
+        <link rel="canonical" href="https://sfr-tsr.ru/payments-info" />
         <meta name="robots" content="index, follow" />
       </Helmet>
 
+      {/* 🔹 Основной блок */}
       <Box
         sx={{
           background: "linear-gradient(to right, #b3b3fa, #e3e3ff)",
@@ -33,6 +47,7 @@ function PaymantsInfo() {
           flexDirection: { xs: "column", sm: "row" },
           gap: 4,
           alignItems: "center",
+          mt: 3,
         }}
       >
         {/* Изображение */}
@@ -48,7 +63,7 @@ function PaymantsInfo() {
           <Box
             component="img"
             src="/Group31.png"
-            alt="Электронный сертификат"
+            alt="Электронный сертификат СФР-ТСР"
             sx={{
               width: "100%",
               height: "auto",
@@ -70,9 +85,9 @@ function PaymantsInfo() {
           }}
         >
           <Typography
-            variant="h4"
+            variant="h1"
             sx={{
-              fontSize: { xs: "1.5rem", sm: "1.875rem" },
+              fontSize: { xs: "1.75rem", sm: "2rem" },
               fontWeight: "bold",
               letterSpacing: "0.025em",
               display: "flex",
@@ -86,8 +101,9 @@ function PaymantsInfo() {
                 color: "secondary.main",
               }}
             />
-            Оплата электронным сертификатом
+            Оплата покупок электронным сертификатом СФР-ТСР
           </Typography>
+
           <Typography
             variant="body1"
             sx={{
@@ -96,9 +112,12 @@ function PaymantsInfo() {
               lineHeight: 1.6,
             }}
           >
-            Теперь оплачивать покупки на нашем сайте вы можете и электронным
-            сертификатом. Это быстро, удобно и современно.
+            Теперь оплачивать покупки на сайте СФР-ТСР можно с помощью{" "}
+            <strong>электронного сертификата</strong>. Это удобно, безопасно и
+            современно. Просто введите код сертификата при оформлении заказа — и
+            сумма будет списана автоматически.
           </Typography>
+
           <Button
             onClick={() => navigate("/certificate")}
             sx={{
@@ -118,8 +137,57 @@ function PaymantsInfo() {
               transition: "transform 0.2s ease-in-out",
             }}
           >
-            Подробнее
+            Подробнее о сертификате СФР-ТСР
           </Button>
+        </Box>
+      </Box>
+
+      {/* 🔹 Дополнительный SEO-раздел */}
+      <Box sx={{ mt: 6, px: { xs: 2, sm: 6 } }}>
+        <Typography
+          variant="h2"
+          sx={{
+            fontSize: { xs: "1.375rem", sm: "1.75rem" },
+            fontWeight: 600,
+            mb: 3,
+          }}
+        >
+          Как использовать электронный сертификат для оплаты
+        </Typography>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+            color: "text.secondary",
+            fontSize: { xs: "0.95rem", sm: "1.05rem" },
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <CheckCircleOutlineIcon color="success" />
+            <Typography>
+              Выберите товары на сайте СФР-ТСР и добавьте их в корзину.
+            </Typography>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <CheckCircleOutlineIcon color="success" />
+            <Typography>
+              При оформлении заказа выберите «Оплата сертификатом».
+            </Typography>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <CheckCircleOutlineIcon color="success" />
+            <Typography>
+              Введите код электронного сертификата в соответствующее поле.
+            </Typography>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <CheckCircleOutlineIcon color="success" />
+            <Typography>
+              Подтвердите оплату — покупка будет успешно завершена!
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </Box>
