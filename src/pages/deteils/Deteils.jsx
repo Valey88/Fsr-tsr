@@ -20,7 +20,7 @@ export default function Details() {
     "meta-description":
       "Официальные реквизиты ООО «СФР-ТСР»: ИНН, КПП, ОГРН, юридический адрес, банковские реквизиты и контактная информация. СФР-ТСР — надёжный поставщик и партнёр.",
     "meta-keywords":
-      "СФР-ТСР, реквизиты СФР-ТСР, ИНН СФР-ТСР, КПП СФР-ТСР, ОГРН СФР-ТСР, контакты СФР-ТСР, sfrtcr.ru, поставщик, оборудование, компания, реквизиты организации",
+      "СФР-ТСР, реквизиты СФР-ТСР, ИНН СФР-ТСР, КПП СФР-ТСР, ОГРН СФР-ТСР, контакты СФР-ТСР, sfr-tcr.ru, поставщик, оборудование, компания, реквизиты организации",
     "main-heading": "<h1>Реквизиты компании ООО «СФР-ТСР»</h1>",
     "section-heading":
       "<h2>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «СФР-ТСР»</h2>",
@@ -30,7 +30,7 @@ export default function Details() {
     "detail-3": "<p>К/с 30101810200000000824</p>",
     "detail-4": "<p>Р/с 40702810229250005622</p>",
     "detail-5":
-      "<p>E-mail: info@sfrtcr.ru | Сайт: <a href='https://sfrtcr.ru'>https://sfrtcr.ru</a></p>",
+      "<p>E-mail: info@sfr-tcr.ru | Сайт: <a href='https://sfr-tcr.ru'>https://sfr-tcr.ru</a></p>",
   });
 
   useEffect(() => {
@@ -54,8 +54,8 @@ export default function Details() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "ООО «СФР-ТСР»",
-    url: "https://sfrtcr.ru",
-    logo: "https://sfrtcr.ru/logo.png",
+    url: "https://sfr-tcr.ru",
+    logo: "https://sfr-tcr.ru/logo.png",
     description:
       "ООО «СФР-ТСР» — надёжный поставщик оборудования и товаров. Работаем по всей России. ИНН 5609200001, КПП 560901002, ОГРН 1225600000456.",
     address: {
@@ -69,9 +69,9 @@ export default function Details() {
       "@type": "ContactPoint",
       telephone: "+7 (000) 000-00-00",
       contactType: "customer service",
-      email: "info@sfrtcr.ru",
+      email: "info@sfr-tcr.ru",
     },
-    sameAs: ["https://vk.com/sfrtcr", "https://ok.ru/sfrtcr"],
+    sameAs: ["https://vk.com/sfr-tcr", "https://ok.ru/sfr-tcr"],
   };
 
   return (
@@ -89,12 +89,12 @@ export default function Details() {
         <meta property="og:title" content={content["page-title"]} />
         <meta property="og:description" content={content["meta-description"]} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://sfrtcr.ru/details" />
+        <meta property="og:url" content="https://sfr-tcr.ru/details" />
         <meta property="og:site_name" content="СФР-ТСР" />
         <meta property="og:locale" content="ru_RU" />
         <meta
           property="og:image"
-          content="https://sfrtcr.ru/og-image-sfrtcr.jpg"
+          content="https://sfr-tcr.ru/og-image-sfr-tcr.jpg"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={content["page-title"]} />
@@ -104,9 +104,9 @@ export default function Details() {
         />
         <meta
           name="twitter:image"
-          content="https://sfrtcr.ru/og-image-sfrtcr.jpg"
+          content="https://sfr-tcr.ru/og-image-sfr-tcr.jpg"
         />
-        <link rel="canonical" href="https://sfrtcr.ru/details" />
+        <link rel="canonical" href="https://sfr-tcr.ru/details" />
         <script type="application/ld+json">
           {JSON.stringify(schemaOrgJSONLD)}
         </script>

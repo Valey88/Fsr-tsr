@@ -65,20 +65,20 @@ export default function ElectronicCertificate() {
     stripHtml(content["meta-description"]) ||
     "Информация о получении электронных сертификатов СФР-ТСР для приобретения технических средств реабилитации. Подробные условия, порядок использования и ответы на частые вопросы.";
   const pageKeywords =
-    "СФР-ТСР, электронный сертификат, ТСР, сертификат на технические средства реабилитации, sfrtcr.ru, государственная программа, получение сертификата, инвалиды, поддержка государства, СФР";
+    "СФР-ТСР, электронный сертификат, ТСР, сертификат на технические средства реабилитации, sfr-tcr.ru, государственная программа, получение сертификата, инвалиды, поддержка государства, СФР";
 
   const schemaOrgJSONLD = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: pageTitle,
-    url: "https://sfrtcr.ru/certificate",
+    url: "https://sfr-tcr.ru/certificate",
     description: pageDescription,
     publisher: {
       "@type": "Organization",
       name: "ООО «СФР-ТСР»",
-      url: "https://sfrtcr.ru",
-      logo: "https://sfrtcr.ru/logo.png",
-      sameAs: ["https://vk.com/sfrtcr", "https://ok.ru/sfrtcr"],
+      url: "https://sfr-tcr.ru",
+      logo: "https://sfr-tcr.ru/logo.png",
+      sameAs: ["https://vk.com/sfr-tcr", "https://ok.ru/sfr-tcr"],
     },
   };
 
@@ -89,16 +89,16 @@ export default function ElectronicCertificate() {
         <meta name="description" content={pageDescription} />
         <meta name="keywords" content={pageKeywords} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://sfrtcr.ru/certificate" />
+        <link rel="canonical" href="https://sfr-tcr.ru/certificate" />
 
         {/* Open Graph */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://sfrtcr.ru/certificate" />
+        <meta property="og:url" content="https://sfr-tcr.ru/certificate" />
         <meta
           property="og:image"
-          content="https://sfrtcr.ru/og-image-certificate.jpg"
+          content="https://sfr-tcr.ru/og-image-certificate.jpg"
         />
         <meta property="og:locale" content="ru_RU" />
         <meta property="og:site_name" content="СФР-ТСР" />
@@ -109,7 +109,7 @@ export default function ElectronicCertificate() {
         <meta name="twitter:description" content={pageDescription} />
         <meta
           name="twitter:image"
-          content="https://sfrtcr.ru/og-image-certificate.jpg"
+          content="https://sfr-tcr.ru/og-image-certificate.jpg"
         />
 
         {/* JSON-LD Schema */}

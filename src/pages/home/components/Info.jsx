@@ -8,10 +8,10 @@ export default function Info() {
     <Box sx={{ py: { xs: 3, sm: 4 } }}>
       {/* 🔹 SEO-оптимизация */}
       <Helmet>
-        <title>График работы и уведомления | sfrtcr.ru</title>
+        <title>График работы и уведомления | sfr-tcr.ru</title>
         <meta
           name="description"
-          content="График работы sfrtcr.ru в праздничные дни, медицинские предупреждения и уведомления о продукции. Ознакомьтесь с актуальной информацией перед покупкой."
+          content="График работы sfr-tcr.ru в праздничные дни, медицинские предупреждения и уведомления о продукции. Ознакомьтесь с актуальной информацией перед покупкой."
         />
         <meta
           name="keywords"
@@ -19,15 +19,15 @@ export default function Info() {
         />
         <meta
           property="og:title"
-          content="График работы и уведомления | sfrtcr.ru"
+          content="График работы и уведомления | sfr-tcr.ru"
         />
         <meta
           property="og:description"
-          content="Узнайте актуальный график работы sfrtcr.ru, медицинские предупреждения и важные уведомления о товарах."
+          content="Узнайте актуальный график работы sfr-tcr.ru, медицинские предупреждения и важные уведомления о товарах."
         />
-        <meta property="og:image" content="/img/og-image-sfrtcr.jpg" />
-        <meta property="og:url" content="https://sfrtcr.ru/info" />
-        <link rel="canonical" href="https://sfrtcr.ru/info" />
+        <meta property="og:image" content="/img/og-image-sfr-tcr.jpg" />
+        <meta property="og:url" content="https://sfr-tcr.ru/info" />
+        <link rel="canonical" href="https://sfr-tcr.ru/info" />
         <meta name="robots" content="index, follow" />
       </Helmet>
 
@@ -42,7 +42,7 @@ export default function Info() {
           color: "text.primary",
         }}
       >
-        Уведомления sfrtcr.ru
+        Уведомления sfr-tcr.ru
       </Typography>
 
       {/* 🔹 Блок 1: Медицинское предупреждение */}

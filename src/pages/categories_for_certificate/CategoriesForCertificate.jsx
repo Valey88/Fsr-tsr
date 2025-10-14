@@ -25,7 +25,7 @@ export default function CategoriesPage() {
     "@type": "ListItem",
     position: index + 1,
     name: item.name,
-    url: `https://sfrtcr.ru/products/certificate/${item.id}`,
+    url: `https://sfr-tcr.ru/products/certificate/${item.id}`,
   }));
 
   return (
@@ -40,7 +40,7 @@ export default function CategoriesPage() {
           name="keywords"
           content="категории товаров, СФР-ТСР, сертификаты, ТСР, медицинские товары, продукция"
         />
-        <link rel="canonical" href="https://sfrtcr.ru/categories" />
+        <link rel="canonical" href="https://sfr-tcr.ru/categories" />
 
         {/* Open Graph / Social */}
         <meta property="og:title" content="Категории товаров | СФР-ТСР" />
@@ -49,10 +49,10 @@ export default function CategoriesPage() {
           content="Ознакомьтесь с категориями товаров компании СФР-ТСР. Широкий ассортимент продукции для ваших нужд и сертифицированные товары."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://sfrtcr.ru/categories" />
+        <meta property="og:url" content="https://sfr-tcr.ru/categories" />
         <meta
           property="og:image"
-          content="https://sfrtcr.ru/og-image-categories.jpg"
+          content="https://sfr-tcr.ru/og-image-categories.jpg"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Категории товаров | СФР-ТСР" />
@@ -62,7 +62,7 @@ export default function CategoriesPage() {
         />
         <meta
           name="twitter:image"
-          content="https://sfrtcr.ru/og-image-categories.jpg"
+          content="https://sfr-tcr.ru/og-image-categories.jpg"
         />
 
         {/* Schema.org для категорий */}

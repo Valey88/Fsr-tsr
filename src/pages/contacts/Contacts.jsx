@@ -20,8 +20,8 @@ export default function Contacts() {
     "meta-description":
       "Свяжитесь с ООО «СФР-ТСР». Адреса, телефоны и пункты выдачи технических средств реабилитации по России. Работаем с государственной программой СФР.",
     "meta-keywords":
-      "СФР-ТСР контакты, sfrtcr.ru, телефон СФР-ТСР, адрес СФР-ТСР, пункт выдачи ТСР, технические средства реабилитации",
-    "canonical-link": "https://sfrtcr.ru/contacts",
+      "СФР-ТСР контакты, sfr-tcr.ru, телефон СФР-ТСР, адрес СФР-ТСР, пункт выдачи ТСР, технические средства реабилитации",
+    "canonical-link": "https://sfr-tcr.ru/contacts",
     "main-heading": "<h1>Контакты ООО «СФР-ТСР»</h1>",
     "phone-1": "+7 (903) 086 3091",
     "phone-2": "+7 (353) 293 5241",
@@ -84,8 +84,8 @@ export default function Contacts() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "ООО «СФР-ТСР»",
-    url: "https://sfrtcr.ru",
-    logo: "https://sfrtcr.ru/logo.png",
+    url: "https://sfr-tcr.ru",
+    logo: "https://sfr-tcr.ru/logo.png",
     sameAs: [
       "https://vk.com/sfr_tsr",
       "https://ok.ru/sfrtsr",
@@ -107,7 +107,7 @@ export default function Contacts() {
     "@type": "ContactPage",
     name: "Контакты ООО «СФР-ТСР»",
     description: stripHtml(content["meta-description"]),
-    url: "https://sfrtcr.ru/contacts",
+    url: "https://sfr-tcr.ru/contacts",
   };
 
   return (
@@ -130,13 +130,13 @@ export default function Contacts() {
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://sfrtcr.ru/contacts" />
+        <meta property="og:url" content="https://sfr-tcr.ru/contacts" />
         <meta property="og:title" content={stripHtml(content["page-title"])} />
         <meta
           property="og:description"
           content={stripHtml(content["meta-description"])}
         />
-        <meta property="og:image" content="https://sfrtcr.ru/og-image.jpg" />
+        <meta property="og:image" content="https://sfr-tcr.ru/og-image.jpg" />
         <meta property="og:site_name" content="СФР-ТСР" />
 
         {/* Twitter Cards */}
@@ -146,7 +146,7 @@ export default function Contacts() {
           name="twitter:description"
           content={stripHtml(content["meta-description"])}
         />
-        <meta name="twitter:image" content="https://sfrtcr.ru/og-image.jpg" />
+        <meta name="twitter:image" content="https://sfr-tcr.ru/og-image.jpg" />
 
         {/* JSON-LD */}
         <script type="application/ld+json">

@@ -194,7 +194,7 @@ export default function CatalogDynamicCertificatePage() {
     position: index + 1,
     name: e.name,
     image: `${urlPictures}/${e.images[0]?.name}`,
-    url: `https://sfrtcr.ru/product/certificate/${e.id}`,
+    url: `https://sfr-tcr.ru/product/certificate/${e.id}`,
     offers: {
       "@type": "Offer",
       price: e.price || 0,
@@ -212,17 +212,17 @@ export default function CatalogDynamicCertificatePage() {
           name="description"
           content="Купить сертификаты на технические средства реабилитации (ТСР) в компании СФР-ТСР. Полный каталог товаров с ценами и описаниями."
         />
-        <link rel="canonical" href={`https://sfrtcr.ru/catalog/${id}`} />
+        <link rel="canonical" href={`https://sfr-tcr.ru/catalog/${id}`} />
         {currentPage > 1 && (
           <link
             rel="prev"
-            href={`https://sfrtcr.ru/catalog/${id}?page=${currentPage - 1}`}
+            href={`https://sfr-tcr.ru/catalog/${id}?page=${currentPage - 1}`}
           />
         )}
         {currentPage < Math.ceil((products.count || 0) / ProductsPerPage) && (
           <link
             rel="next"
-            href={`https://sfrtcr.ru/catalog/${id}?page=${currentPage + 1}`}
+            href={`https://sfr-tcr.ru/catalog/${id}?page=${currentPage + 1}`}
           />
         )}
         <script type="application/ld+json">
