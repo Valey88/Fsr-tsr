@@ -59,22 +59,22 @@ export default function Contacts() {
   }, []);
 
   const addresses = [
-    {
-      address: content["address-1"],
-      coords: JSON.parse(content["coords-1"] || "[51.769, 55.096]"),
-    },
-    {
-      address: content["address-2"],
-      coords: JSON.parse(content["coords-2"] || "[51.227, 58.562]"),
-    },
-    {
-      address: content["address-3"],
-      coords: JSON.parse(content["coords-3"] || "[54.738, 55.972]"),
-    },
-    {
-      address: content["address-4"],
-      coords: JSON.parse(content["coords-4"] || "[56.838, 60.597]"),
-    },
+    // {
+    //   address: content["address-1"],
+    //   coords: JSON.parse(content["coords-1"] || "[51.769, 55.096]"),
+    // },
+    // {
+    //   address: content["address-2"],
+    //   coords: JSON.parse(content["coords-2"] || "[51.227, 58.562]"),
+    // },
+    // {
+    //   address: content["address-3"],
+    //   coords: JSON.parse(content["coords-3"] || "[54.738, 55.972]"),
+    // },
+    // {
+    //   address: content["address-4"],
+    //   coords: JSON.parse(content["coords-4"] || "[56.838, 60.597]"),
+    // },
   ];
 
   const stripHtml = (html) => (html ? html.replace(/<[^>]+>/g, "") : "");

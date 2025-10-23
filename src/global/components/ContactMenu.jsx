@@ -27,8 +27,8 @@ const ContactMenu = () => {
         onClose={handleClose}
         MenuListProps={{ "aria-labelledby": "contact-button" }}
       >
-        <MenuItem onClick={handleClose}>+7 (903) 086 3091</MenuItem>
-        <MenuItem onClick={handleClose}>+7 (353) 293 5241</MenuItem>
+        <MenuItem onClick={handleClose}>+7 905 895 69 83</MenuItem>
+        {/* <MenuItem onClick={handleClose}>+7 (353) 293 5241</MenuItem> */}
       </Menu>
       {/* <Typography color="black">olimp1-info@yandex.ru</Typography> */}
     </Box>

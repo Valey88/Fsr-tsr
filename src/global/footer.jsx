@@ -12,24 +12,24 @@ const menuItems = [
   { text: "Контакты", href: "/contacts" },
 ];
 
-const addresses = [
-  {
-    text: "г. Оренбург, ул. Шевченко д. 20 «В» Магазин - Склад",
-    phone: "+7 3532 93-52-41",
-  },
-  {
-    text: "г. Орск, проспект Мира. 15 «Д», ТД Яшма, магазин «Памперсы»",
-    phone: "+7 905 896-23-23",
-  },
-  {
-    text: "г. Уфа, ул. Степана Кувыкина, 41, Магазин-Склад",
-    phone: "+7 961 366-82-46",
-  },
-  {
-    text: "г. Екатеринбург, пр-т. Ленина 79 «Б», Центр обучения",
-    phone: "+7 903 086-34-11",
-  },
-];
+// const addresses = [
+//   {
+//     text: "г. Оренбург, ул. Шевченко д. 20 «В» Магазин - Склад",
+//     phone: "+7 3532 93-52-41",
+//   },
+//   {
+//     text: "г. Орск, проспект Мира. 15 «Д», ТД Яшма, магазин «Памперсы»",
+//     phone: "+7 905 896-23-23",
+//   },
+//   {
+//     text: "г. Уфа, ул. Степана Кувыкина, 41, Магазин-Склад",
+//     phone: "+7 961 366-82-46",
+//   },
+//   {
+//     text: "г. Екатеринбург, пр-т. Ленина 79 «Б», Центр обучения",
+//     phone: "+7 903 086-34-11",
+//   },
+// ];
 
 export default function Footer() {
   return (
@@ -78,27 +78,25 @@ export default function Footer() {
               </Typography>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 <PhoneIcon sx={{ fontSize: 18, color: "#7200FF" }} />
-                <Typography sx={{ fontSize: 14 }}>
-                  +7 (903) 086-30-91
-                </Typography>
+                <Typography sx={{ fontSize: 14 }}>+7 905 895 69 83</Typography>
               </Box>
-              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              {/* <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 <PhoneIcon sx={{ fontSize: 18, color: "#7200FF" }} />
                 <Typography sx={{ fontSize: 14 }}>
                   +7 (353) 293-52-41
                 </Typography>
-              </Box>
+              </Box> */}
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                <EmailIcon sx={{ fontSize: 18, color: "#7200FF" }} />
+                {/* <EmailIcon sx={{ fontSize: 18, color: "#7200FF" }} />
                 <Typography sx={{ fontSize: 14 }}>
                   olimp1-info@yandex.ru
-                </Typography>
+                </Typography> */}
               </Box>
             </Box>
           </Grid>
 
           {/* Адреса */}
-          <Grid item xs={12} md={6}>
+          {/* <Grid item xs={12} md={6}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
               <Typography
                 sx={{ fontWeight: 600, fontSize: 15, color: "#1A1A1A" }}
@@ -124,7 +122,7 @@ export default function Footer() {
                 </Box>
               ))}
             </Box>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
 

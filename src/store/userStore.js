@@ -278,6 +278,14 @@ const useUserStore = create((set, get) => ({
     }
   },
 
+  deleteUser: async (id) => {
+    try {
+      const response = await api.delete(`/user/${id}`);
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  },
+
   // Получение информации о пользователе
   getUserInfo: async () => {
     const state = get();

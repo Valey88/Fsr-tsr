@@ -116,9 +116,15 @@ export default function Register() {
         <Paper sx={{ p: 2, mt: 5, mb: 5, width: { xs: 320, md: 500 } }}>
           <Container>
             <Box
-              sx={{ display: "flex", alignItems: "center", gridGap: 15, mb: 4, width:"100px" }}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gridGap: 15,
+                mb: 4,
+                width: "100px",
+              }}
             >
-             <img style={{ width: "100%" }} src="/Logo.png" alt="" />
+              <img style={{ width: "100%" }} src="/Logo.png" alt="" />
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column", gridGap: 30 }}>
               <Typography variant="h4">Регистрация</Typography>
@@ -302,11 +308,16 @@ export default function Register() {
               justifyContent: "space-between",
             }}
           >
-            <Box sx={{ display: "flex", alignItems: "center", gridGap: 15 }}>
-              <img src="/previwLogo.svg" alt="" />
-              <Typography variant="h6" sx={{ color: "#8b5cf6" }}>
-                Лого
-              </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gridGap: 15,
+                mb: 4,
+                width: "100px",
+              }}
+            >
+              <img style={{ width: "100%" }} src="/Logo.png" alt="" />
             </Box>
             <Button
               variant="contained"
