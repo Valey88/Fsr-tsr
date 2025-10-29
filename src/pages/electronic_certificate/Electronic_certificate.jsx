@@ -75,7 +75,7 @@ export default function ElectronicCertificate() {
     description: pageDescription,
     publisher: {
       "@type": "Organization",
-      name: "ООО «СФР-ТСР»",
+      name: "ООО «Олимп»",
       url: "https://sfr-tcr.ru",
       logo: "https://sfr-tcr.ru/logo.png",
       sameAs: ["https://vk.com/sfr-tcr", "https://ok.ru/sfr-tcr"],

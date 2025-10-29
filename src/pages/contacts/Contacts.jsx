@@ -16,13 +16,13 @@ import api from "../../configs/axiosConfig";
 
 export default function Contacts() {
   const [content, setContent] = useState({
-    "page-title": "Контакты — ООО «СФР-ТСР» | Адреса и телефоны",
+    "page-title": "Контакты — ООО «Олимп» | Адреса и телефоны",
     "meta-description":
-      "Свяжитесь с ООО «СФР-ТСР». Адреса, телефоны и пункты выдачи технических средств реабилитации по России. Работаем с государственной программой СФР.",
+      "Свяжитесь с ООО «Олимп». Адреса, телефоны и пункты выдачи технических средств реабилитации по России. Работаем с государственной программой СФР.",
     "meta-keywords":
       "СФР-ТСР контакты, sfr-tcr.ru, телефон СФР-ТСР, адрес СФР-ТСР, пункт выдачи ТСР, технические средства реабилитации",
     "canonical-link": "https://sfr-tcr.ru/contacts",
-    "main-heading": "<h1>Контакты ООО «СФР-ТСР»</h1>",
+    "main-heading": "<h1>Контакты ООО «Олимп»</h1>",
     "phone-1": "+7 (903) 086 3091",
     "phone-2": "+7 (353) 293 5241",
     "address-1":
@@ -83,7 +83,7 @@ export default function Contacts() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "ООО «СФР-ТСР»",
+    name: "ООО «Олимп»",
     url: "https://sfr-tcr.ru",
     logo: "https://sfr-tcr.ru/logo.png",
     sameAs: [
@@ -105,7 +105,7 @@ export default function Contacts() {
   const pageSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Контакты ООО «СФР-ТСР»",
+    name: "Контакты ООО «Олимп»",
     description: stripHtml(content["meta-description"]),
     url: "https://sfr-tcr.ru/contacts",
   };
@@ -329,7 +329,7 @@ export default function Contacts() {
             fontSize: "0.9rem",
           }}
         >
-          © ООО «СФР-ТСР». Все права защищены.
+          © ООО «Олимп». Все права защищены.
         </Box>
       </Container>
     </Box>

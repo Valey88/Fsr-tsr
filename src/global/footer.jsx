@@ -145,7 +145,7 @@ export default function Footer() {
           }}
         >
           <Typography sx={{ color: "#FFF", fontSize: 12 }}>
-            © ООО «СФР-ТСР». Все права защищены.
+            © ООО «Олимп». Все права защищены.
           </Typography>
           <Link
             href="/privacy"
