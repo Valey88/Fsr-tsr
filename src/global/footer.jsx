@@ -78,7 +78,7 @@ export default function Footer() {
               </Typography>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 <PhoneIcon sx={{ fontSize: 18, color: "#7200FF" }} />
-                <Typography sx={{ fontSize: 14 }}>+7 905 895 69 83</Typography>
+                <Typography sx={{ fontSize: 14 }}>+7 903 086 30 91</Typography>
               </Box>
               {/* <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 <PhoneIcon sx={{ fontSize: 18, color: "#7200FF" }} />
@@ -145,7 +145,7 @@ export default function Footer() {
           }}
         >
           <Typography sx={{ color: "#FFF", fontSize: 12 }}>
-            © ООО «Олимп». Все права защищены.
+            © ИП Пахомов С.А. Все права защищены.
           </Typography>
           <Link
             href="/privacy"

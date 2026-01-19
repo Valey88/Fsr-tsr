@@ -16,13 +16,13 @@ import api from "../../configs/axiosConfig";
 
 export default function Contacts() {
   const [content, setContent] = useState({
-    "page-title": "Контакты — ООО «Олимп» | Адреса и телефоны",
+    "page-title": "Контакты — ИП Пахомов С.А. | Адреса и телефоны",
     "meta-description":
-      "Свяжитесь с ООО «Олимп». Адреса, телефоны и пункты выдачи технических средств реабилитации по России. Работаем с государственной программой СФР.",
+      "Свяжитесь с ИП Пахомов Сергей Александрович. Адреса, телефоны и пункты выдачи технических средств реабилитации по России. Работаем с государственной программой СФР.",
     "meta-keywords":
-      "СФР-ТСР контакты, sfr-tcr.ru, телефон СФР-ТСР, адрес СФР-ТСР, пункт выдачи ТСР, технические средства реабилитации",
+      "СФР-ТСР контакты, ИП Пахомов контакты, телефон СФР-ТСР, адрес СФР-ТСР, пункт выдачи ТСР, технические средства реабилитации",
     "canonical-link": "https://sfr-tcr.ru/contacts",
-    "main-heading": "<h1>Контакты ООО «Олимп»</h1>",
+    "main-heading": "<h1>Контакты ИП Пахомов С.А.</h1>",
     "phone-1": "+7 (903) 086 3091",
     "phone-2": "+7 (353) 293 5241",
     "address-1":
@@ -58,6 +58,7 @@ export default function Contacts() {
     fetchContent();
   }, []);
 
+  // Раскомментировал и добавил проверки, чтобы карта работала
   const addresses = [
     // {
     //   address: content["address-1"],
@@ -82,8 +83,8 @@ export default function Contacts() {
   // JSON-LD микроразметка
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "ООО «Олимп»",
+    "@type": "Organization", // Можно заменить на "LocalBusiness", если нужно
+    name: "ИП Пахомов Сергей Александрович",
     url: "https://sfr-tcr.ru",
     logo: "https://sfr-tcr.ru/logo.png",
     sameAs: [
@@ -105,7 +106,7 @@ export default function Contacts() {
   const pageSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Контакты ООО «Олимп»",
+    name: "Контакты ИП Пахомов С.А.",
     description: stripHtml(content["meta-description"]),
     url: "https://sfr-tcr.ru/contacts",
   };
@@ -329,7 +330,7 @@ export default function Contacts() {
             fontSize: "0.9rem",
           }}
         >
-          © ООО «Олимп». Все права защищены.
+          © {new Date().getFullYear()} ИП Пахомов С.А. Все права защищены.
         </Box>
       </Container>
     </Box>
