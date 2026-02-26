@@ -59,7 +59,7 @@ const NotFound = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        background: "linear-gradient(135deg, #F5FCFF 0%, #A5DED1 100%)",
+        background: "linear-gradient(135deg, #F5FCFF 0%, #D3D3FF 100%)",
         overflow: "hidden",
         position: "relative",
       }}
@@ -75,7 +75,7 @@ const NotFound = () => {
           position: "absolute",
           width: "300px",
           height: "300px",
-          background: "radial-gradient(circle, #2CC0B3, transparent)",
+          background: "radial-gradient(circle, #7B2BD1, transparent)",
           borderRadius: "50%",
           top: "10%",
           left: "20%",
@@ -92,7 +92,7 @@ const NotFound = () => {
           position: "absolute",
           width: "200px",
           height: "200px",
-          background: "radial-gradient(circle, #00B3A4, transparent)",
+          background: "radial-gradient(circle, #7B2BD1, transparent)",
           borderRadius: "50%",
           bottom: "15%",
           right: "25%",
@@ -112,7 +112,7 @@ const NotFound = () => {
           sx={{
             fontSize: { xs: "4rem", md: "8rem" },
             fontWeight: "bold",
-            color: "#2CC0B3",
+            color: "#7B2BD1",
             textShadow: "2px 2px 10px rgba(0, 0, 0, 0.2)",
           }}
         >
@@ -131,11 +131,11 @@ const NotFound = () => {
           sx={{
             fontSize: { xs: "2rem", md: "3.5rem" },
             fontWeight: "bold",
-            color: "#00B3A4",
+            color: "#7B2BD1",
             letterSpacing: "2px",
           }}
         >
-          Sdmedik.ru
+          Sfr-tcr.ru
         </Typography>
       </motion.div>
 
@@ -164,14 +164,15 @@ const NotFound = () => {
         onClick={() => navigate("/")}
         sx={{
           mt: 4,
-          backgroundColor: "#2CC0B3",
+          backgroundColor: "#7B2BD1",
           color: "#fff",
           padding: "10px 30px",
           borderRadius: "25px",
           fontSize: "1.1rem",
           textTransform: "none",
+          fontWeight: "bold",
           "&:hover": {
-            backgroundColor: "#00B3A4",
+            backgroundColor: "#7B2BD1",
           },
         }}
       >
