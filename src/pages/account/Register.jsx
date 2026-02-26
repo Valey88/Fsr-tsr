@@ -31,9 +31,8 @@ const formatPhoneNumber = (value) => {
   const match = cleaned.match(/^7(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})$/);
   if (!match) return "+7 (";
   const [, areaCode, firstPart, secondPart, thirdPart] = match;
-  return `+7 (${areaCode}${areaCode ? ")" : ""}${
-    firstPart ? ` ${firstPart}` : ""
-  }${secondPart ? `-${secondPart}` : ""}${thirdPart ? `-${thirdPart}` : ""}`;
+  return `+7 (${areaCode}${areaCode ? ")" : ""}${firstPart ? ` ${firstPart}` : ""
+    }${secondPart ? `-${secondPart}` : ""}${thirdPart ? `-${thirdPart}` : ""}`;
 };
 
 export default function Register() {

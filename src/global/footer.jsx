@@ -148,7 +148,7 @@ export default function Footer() {
             © ИП Пахомов С.А. Все права защищены.
           </Typography>
           <Link
-            href="/privacy"
+            href="/privacy-policy.pdf"
             underline="hover"
             sx={{ color: "#FFF", fontSize: 12 }}
           >
